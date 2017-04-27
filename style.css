@@ -1,0 +1,85 @@
+html,body{
+    background: #E7926B;
+}
+#menu_nav{
+    left: 0px;
+    top:0px;
+    position: fixed;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    background: #ffffee;
+    display:none;
+}
+#menu_nav.show{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+
+}
+#container{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    overflow:hidden; 
+}
+#menuButton{
+    background: #E7926B;
+    color:#ffffee;
+    border: solid;
+    border-color:#ffffee;
+    border-radius: 500px;
+    text-align: center;
+    top:40%;
+    width: 100px;
+    height:100px;
+    position: absolute; 
+    transition: all 0.2s ease-out;
+    cursor: pointer;
+}
+div.expand{
+    background: white;
+    box-shadow: 0px 0px 0px 2000px #fffff0;
+    border:none;
+}
+div.endExadn{
+     box-shadow: 0px 0px 0px 0px #fffff0;
+}
+#menuButton svg{
+    position: relative;
+    left:0;
+    stroke:white;
+    stroke-width:5px;
+}
+#menu{
+    text-align:center;
+    position: relative;
+    left: 10px;
+    transition: all 0.2s linear;
+    overflow-y:scroll;
+    overflow-x:hidden;
+}
+#menu ul{
+    padding-left:5px;
+    list-style: none;
+    font-family:sans;
+    font-size: xx-large;
+}
+#menu ul li{
+    cursor: pointer;
+    margin-top:50px
+}
+#menu ul li:hover{
+    color:#E7926B
+}
+@media screen and (max-width: 500px){
+    #menuButton{
+        top:1px!important;
+        left:1px!important;
+    }
+    #menu_nav{
+       left:30%; 
+    }
+
+}
