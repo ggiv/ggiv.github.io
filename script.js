@@ -34,7 +34,7 @@ function newHamburgerButton(menu_div){
 			//	menuContainer.style.display="block";
 				menuContainer.className="show";
 				menuButton.className="endExpand";
-				menu.style.left=(menu.offsetWidth-menu.clientWidth)+"px";
+				menu.style.left=((menu.offsetWidth-menu.clientWidth)+1)+"px";
 			},400)
 		}else{
 			animateIconToHamburger();
