@@ -6,23 +6,26 @@ html,body{
     top:0px;
     position: fixed;
     overflow: hidden;
-    width: 100%;
+    width: 100px;
     height: 100%;
-    background: #ffffee;
-    display:none;
+    visibility:hidden;
+
 }
 #menu_nav.show{
     display: flex;
     width: 100%;
     justify-content: center;
-
+	visibility:visible;
+	position:fixed;    
 }
 #container{
     display: flex;
+	visibility:hidden;
     height: 100%;
     flex-direction: column;
     justify-content: center;
     overflow:hidden;
+    
 }
 
 #menuButton{
@@ -38,15 +41,19 @@ html,body{
     position: absolute; 
     transition: all 0.2s ease-out;
     cursor: pointer;
+   behavior: url(PIE/PIE.htc);
 }
-div.expand{
+.expand{
     background: white;
-    box-shadow: 0px 0px 0px 2000px #fffff0;
+    box-shadow: 0px 0px 0px 2000px rgba(255,255,255,0.4);
     border:none;
+	behavior: url(PIE/PIE.htc);
 }
-div.endExadn{
-     box-shadow: 0px 0px 0px 0px #fffff0;
+.endExpand{
+    box-shadow: 0px 0px 0px 2000px rgba(255,255,255,0.4);
+	behavior: url(PIE/PIE.htc);
 }
+
 #menuButton svg{
     position: relative;
     left:0;
@@ -57,21 +64,29 @@ div.endExadn{
     text-align:center;
     position: relative;
     transition: all 0.2s linear;
-    overflow-y:scroll;
+    overflow-y:auto;
     overflow-x:hidden;
+    width: 20em;
+    justify-content:space-around;
 }
 #menu ul{
     padding-left:5px;
     list-style: none;
     font-family:sans;
     font-size: xx-large;
+
 }
 #menu ul li{
     cursor: pointer;
     margin-top:50px
 }
 #menu ul li:hover{
-    color:#E7926B
+    color:#ffffff;
+}
+#linesIcon{
+	width:90px;
+	position:relative;
+	top:10px;
 }
 @media screen and (max-width: 500px){
     #menuButton{
