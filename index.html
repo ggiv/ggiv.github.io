@@ -2,22 +2,71 @@
 <html lang='en'>
 	<head>
 		<meta charset="UTF-8"/>
-		<title>Redly</title>
+		<title>Form Test 01</title>
+		<script>
+(function(){
+	var version;
+	var formFrame;
+	var formVersion="desktop";
+	var button;
+	var frameContainer;
+
+	window.onload=function(){
+		formFrame=document.getElementById("form_frame_001");
+		version=document.getElementById("frame_version_001");
+		button=document.getElementById("change");
+		frameContainer=document.getElementById("frame_container");
+		button.addEventListener("click",changeVersion);
+		checkWindowSize();
+	}
+	window.onresize=function(){
+		checkWindowSize();
+	}
+	function checkWindowSize(){
+		if(screen.width<500){
+			formVersion="mobile";
+			version.innerHTML="Mobile Version";
+		}else{
+			formVersion="desktop";
+			version.innerHTML="Desktop Version";
+		}
+	}
+	function changeVersion(){
+		if(formVersion=="mobile"){
+			formVersion="desktop";
+			version.innerHTML="Desktop Version";
+			button.innerHTML="Change to Mobile"
+			formFrame.src="form1_desktop.html"
+			formFrame.style.width="350px";
+			formFrame.style.height="650px";
+		}else{
+			formVersion="mobile";
+			version.innerHTML="Mobile Version";
+			button.innerHTML="Change to Desktop"
+			formFrame.src="form1_mobile.html"
+			formFrame.style.width="240px";
+			formFrame.style.height="260px";
+		}
+	}
+})();
+
+		function resizeFrame(){
+			//this.style.height="";
+			//this.style.height=this.contentWindow.document.body.scrollHeight+"px";
+			console.log("Frame clicked");
+		}
+		</script>
 		<link rel='stylesheet' href='style.css'/>
 	</head>
 	<body>
-		<div id='container'>
-			<div class='eye'>
-				<div class="eye_low">
-					<div class="eye_hi"></div>
-				</div>
+		<div id="container">
+			<div id="frame_controls">
+				<h2 id="frame_version_001">This is desktop version</h2>
+				<button id="change">Change to Mobile</button>
 			</div>
-			<div class='eye'>
-				<div class="eye_low">
-					<div class="eye_hi"></div>
-				</div>
+			<div id="frame_container">
+				<iframe id="form_frame_001" src="form1_desktop.html"></iframe>
 			</div>
-			<div id="mouth"></div>
 		</div>
 	</body>
 </html>
