@@ -7,7 +7,6 @@ body{
     height: 100%;
     display: flex;
     justify-content:center;
-    flex-direction: column;
     align-items: center;
     padding-top:10px;
 }
@@ -20,6 +19,12 @@ iframe{
 
 }
 #frame_container{
+    width: 360px;
+    height: 800px;
+    top:50px;
+    display: flex;
+}
+#frame_container2{
     width: 360px;
     height: 800px;
     top:50px;
