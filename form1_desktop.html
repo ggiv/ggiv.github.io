@@ -49,7 +49,7 @@
 				for(i=0;i<formFirstStage.length;i++){
 					formFirstStage[i].style.display='none';
 				}
-				errorMessage.style.display="none";
+				errorMessage.style.visibility="hidden";
 			}
 			function showSecondStage(){
 				var i;
@@ -75,7 +75,7 @@
 						stage[i].style.border="solid 1px red";
 						stage[i].style["box-shadow"]="0px 0px 2px 0px red";
 						formErrors++;
-						errorMessage.style.display="block";
+						errorMessage.style.visibility="visible";
 					}
 				}
 				}
@@ -84,9 +84,9 @@
 		<link rel='stylesheet' href='style_form_desktop.css'/>
 	</head>
 	<body>
-		<form class="form_desktop" id="form001" action="" onsubmit="return false">
+		<form class="form_desktop" id="form001" action="" onsubmit="return false" >
 			<label class="input_label first_stage">Job Type</label>
-			<select class="input_select first_stage" name="JobTypes" value="Palms">
+			<select class="input_select first_stage" name="JobTypes" autofocus value="Palms">
 				<option value="">Select One</option>
 				<option value="TreeRemovalSingleTree">Tree Removal Single Tree</option>
 				<option value="TreeRemovalMultipleTrees">Tree Removal Multiple Trees</option>
@@ -100,7 +100,7 @@
 				<option value="ArboristReports">Arborist Reports</option>
 			</select>
 			<label class="input_label first_stage">Tree Size</label>
-			<select class="input_select first_stage" name="TreeSize">
+			<select class="input_select first_stage" autofocus name="TreeSize">
 				<option value="S">Select One</option>
 				<option value="GreaterThan5meters">Greater than 5m</option>
 				<option value="SmallerThan5meters">Smaller than 5m</option>

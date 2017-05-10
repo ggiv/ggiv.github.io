@@ -17,10 +17,11 @@
 		button=document.getElementById("change");
 		frameContainer=document.getElementById("frame_container");
 		button.addEventListener("click",changeVersion);
-		checkWindowSize();
+		//checkWindowSize();
+		changeVersion();
 	}
 	window.onresize=function(){
-		checkWindowSize();
+		//checkWindowSize();
 	}
 	function checkWindowSize(){
 		if(screen.width<500){
