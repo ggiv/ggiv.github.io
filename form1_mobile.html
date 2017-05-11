@@ -30,7 +30,7 @@
 						hideFirstStage();
 						showSecondStage();
 						formStage=1;
-						formButton.innerHTML="Get My Quotes";
+						formButton.innerHTML="GET MY QUOTES";
 						formErrors==0;
 					}
 				}else{
@@ -50,6 +50,7 @@
 					formFirstStage[i].style.display='none';
 				}
 				errorMessage.style.visibility="hidden";
+				errorMessage.style.displey="none";
 			}
 			function showSecondStage(){
 				var i;
@@ -75,7 +76,10 @@
 						stage[i].style.border="solid 1px red";
 						stage[i].style["box-shadow"]="0px 0px 2px 0px red";
 						formErrors++;
-						errorMessage.style.visibility="visible";
+						if(formStage==0){
+							errorMessage.style.visibility="visible";
+							errorMessage.style.display="initial";
+						}
 					}
 				}
 				}
@@ -87,7 +91,7 @@
 		<form class="form_mobile" id="form001" action="" onsubmit="return false">
 			<label class="input_label first_stage">Job Type</label>
 			<select class="input_select first_stage" name="JobTypes" required >
-				<option value="">Select One</option>
+				<option value="">Select One...</option>
 				<option value="TreeRemovalSingleTree">Tree Removal Single Tree</option>
 				<option value="TreeRemovalMultipleTrees">Tree Removal Multiple Trees</option>
 				<option value="TreePruneSingleTree">Tree Prune - Single Tree</option>
@@ -103,9 +107,9 @@
 			<input class="input_input first_stage" id='suburb' required placeholder="e.g. NewTown"/>
 
 			<!--This is second stage-->
-			<label class="input_label second_stage">Tree Size</label>
+			<label class="input_label second_stage">Tree Size?</label>
 			<select class="input_select second_stage" name="TreeSize">
-				<option value="">Select One</option>
+				<option value="">Select One...</option>
 				<option value="GreaterThan5meters">Greater than 5m</option>
 				<option value="SmallerThan5meters">Smaller than 5m</option>
 				<option value="MixOfSize">Mix of size</option>
@@ -118,13 +122,13 @@
 			<label class="input_label second_stage">First Name</label>
 			<input class="input_input second_stage" id='FirstName' placeholder="First Name"/>
 			<label class="input_label second_stage">E-mail</label>
-			<input class="input_input second_stage" id='suburb' placeholder="example@gmail.com"/>
+			<input class="input_input second_stage" id='suburb' placeholder="Email"/>
 			<label class="input_label second_stage">Best contact number</label>
 			<input class="input_input second_stage" id='suburb' required placeholder="Best contact number"/>
 			<label class="underlined_label second_stage">Email and number are used to give free quotes.</label>
 			<label class="input_label second_stage">State</label>
 			<select class="input_select second_stage" required name="CityName">
-				<option value="">Select One</option>
+				<option value="">Select One...</option>
 				<option value="NSW">NSW</option>
 				<option value="VIC">VIC</option>
 				<option value="ACT">ACT</option>
