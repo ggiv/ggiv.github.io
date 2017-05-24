@@ -4,9 +4,10 @@ body{
    // background-position-x: -395px;
     background: #eee;
     overflow: hidden;
+    
 }
 
-.container{
+.city_container{
     width: 100%;
     position: fixed;
     top:35%;
@@ -63,3 +64,218 @@ body{
     background: #eee;
     cursor: pointer;
 }
+/*##############FORM BODY##################*/
+
+.form_body_shadow{
+    position: fixed;
+    top:0px;
+    left:0px;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    display: none;
+}
+.form_body{
+    width: 684px!important;;
+    max-width: 684px !important;
+    height: 600px;
+    background: white;
+}
+.form_panel{
+    width: 456px;
+    height: 600px;
+    border-left: solid 1px #f3f3f3;
+    background:white;
+}
+.form_radio_box{
+    list-style: none;
+    padding: 0px;
+    height: 200px;
+}
+.form_radio_box li{
+    margin-bottom:10px;
+    margin-left: 20px;
+    width: 90%;
+    padding: 15px 10px 13px 20px;
+    background-image: url('radio_on_2.png');
+    background-position: 18px 13px;
+    background-size: 25px;
+    background-repeat:no-repeat;
+}
+.form_radio_box label{
+    position: relative;
+    top:-3px;
+    margin-left: 20px;
+    font-size: 18px;
+    font-family: "Montserrat", Helvetica, Arial;
+    color: #434443;
+}
+.form_radio{
+    width: 20px;
+    height: 20px;
+    margin:0px;
+    padding: 0px;
+    cursor: pointer;
+    opacity: 0;
+}
+.span_radio{
+    width: 20px;
+    height: 20px;
+    background-size: 100%;
+    cursor: pointer;
+}
+
+.form_text{
+    font-family: "Montserrat", Helvetica, Arial;
+    font-size:20px;
+    color: #434443;
+    padding-left: 39px;
+}
+#form_progress{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    position: relative;
+    top:-7px;
+    width: 100%;
+    height: 10px;
+    border:0px;
+    margin:0px;
+    background: #e6e6e6;
+}
+#form_progress::-moz-progress-bar{
+    background: #42BF8D;
+}
+#form_progress::-webkit-progress-bar{
+    background-color: #f3f3f3;
+}
+#form_progress::-webkit-progress-value{
+    background:#42BF8D;;
+}
+
+#form_controls{
+    position: relative;
+    top:255px;
+    margin-top:0px;
+    left: 6%;
+    width: 86%;
+    height: 90px;
+    border-top: solid 1px #f3f3f3;
+    display: flex;
+    justify-content:flex-end;
+    padding-top: 20px;
+}
+#form_controls .active#next_button{
+    height:50px;
+    width: 160px;
+    background: #42BF8D;
+    border-style: none;
+    color:white;
+    font-family: "Montserrat", Helvetica, Arial;
+    font-size: 15px;
+    cursor: pointer;
+}
+#form_controls .not_active#next_button{
+    height:50px;
+    width: 160px;
+    background: #eee;
+    border-style: none;
+    color:#aaa;
+    font-family: "Montserrat", Helvetica, Arial;
+    font-size: 15px;
+    cursor: not-allowed;
+}
+#form_controls .active#back_button{
+    height:50px;
+    width: 160px;
+    background: white;
+    border-style: none;
+    color:#434443;
+    font-family: "Montserrat", Helvetica, Arial;
+    font-size: 15px;
+    cursor: pointer;
+}
+#form_controls .not_active#back_button{
+    height:50px;
+    width: 160px;
+    background: white;
+    border-style: none;
+    color:#434443;
+    font-family: "Montserrat", Helvetica, Arial;
+    font-size: 15px;
+    cursor: pointer;
+    visibility: hidden;
+}
+#HowManyList{
+    display: none;
+}
+#heightList{
+    display: none;
+}
+#JobDescription{
+    display: none;
+    width: 90%;
+}
+#JobDescription .list_radio{
+    background: white !important;
+}
+#ContactFields{
+    display: none;
+}
+.desctiption_textbox{
+    min-width: 95%;
+    min-height: 80px;
+    font-size: 16px;
+    font-family: "Montserrat", Helvetica, Arial;
+    padding: 10px;
+
+}
+.stage_5  .form_text.small_form_text{
+    font-size: 15px;
+    text-align: center;
+    width: 85%;
+    color:#B6B6B8;
+    transform: translate(0px,10px);
+}
+.stage_5 .no_radio{
+    background: white!important;
+}
+.stage_5 .no_form_text{
+    margin-left: 0px;
+    margin-bottom: 10px;
+    padding: 0px;
+}
+.stage_5 .form_input{
+    height: 50px;
+    width: 90%;
+    margin-bottom: -0px;
+    font-size: 20px;
+    padding-left:10px;
+}
+#small_blue_text{
+    font-size: 14px;
+    color:#A2B7D0;
+    font-family: "Montserrat", Helvetica, Arial;
+    margin-bottom: 35px;
+}
+.stage_5 li{
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    background-position-y: 10px;
+}
+.stage_5 label{
+    font-size: 14px;
+    position: relative;
+    top:-9px;
+    color:#B6B6B8;
+
+}
+.tabbed_radio{
+    position: relative;
+    transform: translate(15px,0px);
+}
+/*###################FONTS###################*/
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);

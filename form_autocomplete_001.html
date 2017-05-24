@@ -1,19 +1,123 @@
 <!DOCTYPE html>
+<!--X=1140 Y=600
+text start-end 60px - 297
+image panel - 695
+-->
 <html lang='en'>
 	<head>
 		<meta charset="UTF-8"/>
 		<link rel='stylesheet' href='form_autocomplete_001.css'/>
+	<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
-		<div class='container'>
-			<div id="input_city_container">
-			<input class="input_input" id='CitySearch' name="City" placeholder="e.g. Newtown"/>
-			<div class='input_button' id='city_input_button'></div>
-			</div>
+		<div class='city_container'>
+			<form id='form_001' action='' onsubmit='return false;'>
+				<div id="input_city_container">
+					<input class="input_input" id='CitySearch' name="City" placeholder="e.g. Sydney, 3000" value=""/>
+					<div class='input_button' id='city_input_button'></div>
+				</div>
+				<div class='form_body_shadow'>
+					<div class='form_body'>
+						<progress id='form_progress' max='100' value='10'></progress>
+						<!-- ######################### JOB TYPE ###################-->
+						<ul class='form_radio_box stage_1' id='JobTypesList'>
+						<p class='form_text'>What type of job do you need?</p>
+						<li class='list_radio'>
+							<input class='form_radio' type='radio' name='Job Type' value='Tree removal'/><label>Tree removal</label>
+						</li>
+
+						<li class='list_radio'>
+							<input class='form_radio' type='radio' name='Job Type' value='Tree prune'/><label>Tree prune</label>
+						</li>
+
+						<li class='list_radio'>
+							<input class='form_radio' type='radio' name='Job Type' value='Stump grinding'/><label>Stump grinding</label>
+						</li>
+
+						<li class='list_radio'>
+							<input class='form_radio' type='radio' name='Job Type' value='Palm removal'/><label>Palm removal</label>
+						</li>
+						<li class='list_radio'>
+							<input class='form_radio' type='radio' name='Job Type' value='Palm trim'/><label>Palm trim</label>
+						</li>
+						<li class='list_radio'>
+							<input class='form_radio' type='radio' name='Job Type' value='Arborist report'/><label>Arborist report</label>
+						</li>
+
+						</ul>
+						<!-- #########################HOW MANY TREES###################-->
+						<ul class='form_radio_box stage_2' id='HowManyList'>
+						<p class='form_text'>How many trees?</p>
+						<li class='list_radio'>
+							<input class='form_radio' type='radio' name='Number of trees' value='1'/><label>1</label>
+						</li>
+						<li class='list_radio'>                                            
+							<input class='form_radio' type='radio' name='Number of trees' value='2'/><label>2</label>
+						</li>
+						<li class='list_radio'>                                            
+							<input class='form_radio' type='radio' name='Number of trees' value='3'/><label>3</label>
+						</li>
+						<li class='list_radio'>                                            
+							<input class='form_radio' type='radio' name='Number of trees' value='4+'/><label>4+</label>
+						</li>
+
+						</ul>
+						<!-- ######################### WHAT HEIGHT ###################-->
+						<ul class='form_radio_box stage_3' id='heightList'>
+						<p class='form_text'>What is the approximate height of the trees?</p>
+						<li class='list_radio'>
+							<input class='form_radio' type='radio' name='Tree Height' value='Smaller than 5m'/><label>Smaller than 5m</label>
+						</li>
+
+						<li class='list_radio'>
+							<input class='form_radio' type='radio' name='Tree Height' value='Greater than 5m'/><label>Greater than 5m</label>
+						</li>
+
+						<li class='list_radio'>
+							<input class='form_radio' type='radio' name='Tree Height' value='Not Sure'/><label>Not sure</label>
+						</li>
+
+						</ul>
+						<!-- ######################### JOB DESCRIPTION ###################-->
+						<ul class='form_radio_box stage_4' id='JobDescription'>
+						<p class='form_text'>Job Description </p>
+						<li class='list_radio'>
+							<textarea class='desctiption_textbox' name='Job Description' placeholder="Tell us more about trees.."></textarea>
+						</li>
+						</ul>
+						<!-- ######################### CONTACTS ###################-->
+						<ul class='form_radio_box stage_5' id='ContactFields'>
+							<p class='form_text small_form_text'>Only the 3 businesses quoting your job can see your details </p>
+							<li class='list_radio no_radio'>
+								<p class='form_text no_form_text'>First name</p>
+								<input class='form_input' name='First name'/>
+							</li>
+							<li class='list_radio no_radio'>
+								<p class='form_text no_form_text'>Best contact number</p>
+								<input class='form_input' name='Best contact number'/>
+								<p id='small_blue_text'>Your phone number is used to give you free quotes</p>
+							</li>
+							<li class='list_radio tabbed_radio '>
+							<input class='form_radio' type='radio' name='Tree Height' value='Smaller than 5m'/><label>I'm ok to receiving a call to book in a time to view job</label>
+							</li>
+							<li class='list_radio tabbed_radio'>
+							<input class='form_radio' type='radio' name='Tree Height' value='Smaller than 5m'/><label>I would prefer a text or email</label>
+							</li>
+						</ul>					
+						<!-- ######################### End ###################-->
+
+						<div id='form_controls'>
+							<button id='back_button'class='not_active' action=''>BACK</button>
+							<button id='next_button'class='not_active' action=''>NEXT</button>
+						</div>
+					</div>
+					<div class='form_panel'>
+					</div>
+				</div>
+			</form>
 		</div>
 		<script src='auto-complete.min.js'></script>
 		<script src='form_city_list.js'></script>
 		<script src='form_script_001.js'></script>
-
 	</body>
 </html>
