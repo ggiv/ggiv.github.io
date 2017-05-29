@@ -1,8 +1,4 @@
 <!DOCTYPE html>
-<!--X=1140 Y=600
-text start-end 60px - 297
-image panel - 695
--->
 <html lang='en'>
 	<head>
 		<meta charset="UTF-8"/>
@@ -20,10 +16,14 @@ image panel - 695
 					<div class='form_body'>
 						<progress id='form_progress' max='100' value='10'></progress>
 						<!-- ######################### JOB TYPE ###################-->
+						<div class="error_message" id="error_message_1">
+							<div class="error_message_arrow"></div>
+							<p id="error_text">Please select the most appropriate option.</p>
+						</div>
 						<ul class='form_radio_box stage_1' id='JobTypesList'>
 						<p class='form_text'>What type of job do you need?</p>
 						<li class='list_radio'>
-							<input class='form_radio' type='radio' name='Job Type' value='Tree removal'/><label>Tree removal</label>
+							<input class='form_radio' type='radio' name='Job Type' value='Tree removal'/><label for="">Tree removal</label>
 						</li>
 
 						<li class='list_radio'>
@@ -98,10 +98,10 @@ image panel - 695
 								<p id='small_blue_text'>Your phone number is used to give you free quotes</p>
 							</li>
 							<li class='list_radio tabbed_radio '>
-							<input class='form_radio' type='radio' name='Tree Height' value='Smaller than 5m'/><label>I'm ok to receiving a call to book in a time to view job</label>
+							<input class='form_radio' type='radio' name='Call or email' value='Smaller than 5m'/><label>I'm ok to receiving a call to book in a time to view job</label>
 							</li>
 							<li class='list_radio tabbed_radio'>
-							<input class='form_radio' type='radio' name='Tree Height' value='Smaller than 5m'/><label>I would prefer a text or email</label>
+							<input class='form_radio' type='radio' name='Call or email' value='Smaller than 5m'/><label>I would prefer a text or email</label>
 							</li>
 						</ul>					
 						<!-- ######################### End ###################-->
@@ -112,6 +112,11 @@ image panel - 695
 						</div>
 					</div>
 					<div class='form_panel'>
+						<button id="close_form"></button>
+						<p>What to expect?</p>
+						<p class="panel_line_two">Up to 3 free quotes within 24 hours from qualified businesses</p>
+						<p class="panel_line_three">All businesses voted "best price to quality balance" by 100s of previous users</p>
+						<p class="panel_line_four">Have a question? Call us 1800 25 22 208</p>
 					</div>
 				</div>
 			</form>

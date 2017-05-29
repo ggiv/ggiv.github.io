@@ -28,6 +28,7 @@
 		var formStage=1;
 		var JobType;
 		var radio_buttons=document.getElementsByClassName("list_radio");
+		var radio_buttons_hidden=document.getElementsByClassName("form_radio");
 		var next_button=document.getElementById("next_button");
 		var back_button=document.getElementById("back_button");
 		var progress_bar=document.getElementById("form_progress");
@@ -39,6 +40,9 @@
 		var height_list=document.getElementById("heightList");
 		var job_description=document.getElementById("JobDescription");
 		var contact_fields=document.getElementById("ContactFields");
+		var close_button=document.getElementById("close_form");
+		var error_message=document.getElementById("error_message_1");
+		var error_text=document.getElementById("error_text");
 
 
 		
@@ -46,7 +50,8 @@
 
 		city_input_button.addEventListener('click',citySelected);
 		next_button.addEventListener('click',nextStep2);
-		//back_button.addEventListener('click',stepBack);
+		back_button.addEventListener('click',backStep);
+		close_button.addEventListener('click',closeForm);
 		for(var i=0;i<radio_buttons.length;i++){
 			radio_buttons[i].addEventListener('click',radioSpanSelect);
 			radio_buttons[i].style["background-image"]="url(radio_off_2.png)";
@@ -54,44 +59,178 @@
 		}
 		function radioSpanSelect(){
 		for(var i=0;i<radio_buttons.length;i++){
-			radio_buttons[i].style["background-image"]="url(radio_off_2.png)";
-			radio_buttons[i].style["background-color"]="#FFFFFF";
+			//radio_buttons[i].style["background-image"]="url(radio_off_2.png)";
+			//radio_buttons[i].style["background-color"]="#FFFFFF";
 		}
+			for(var i=1;i<this.parentElement.childNodes.length;i+=2){
+				if(this.parentElement.childNodes[i].tagName=="LI"){
+				this.parentElement.childNodes[i].style["background-image"]="url(radio_off_2.png)";
+				this.parentElement.childNodes[i].style["background-color"]="#FFFFFF";
+				}
+			}
+				console.log(this.parentElement.childNodes.length);
 			this.style["background-image"]="url(radio_on_2.png)";
 			this.style["background-color"]="#FAFAFA";
+			this.childNodes[1].checked='true';
 			next_button.className="active"
 			back_button.className="active"
+			error_message.classList.remove("animate_me");
 		}
 		function citySelected(){
 			if(city_input.value!=""){
 				form_shadow.style.display="flex";
+				formIsOk();
 			}
 		}
 		function nextStep2(){
-			if(formStage==1){
+			if(formStage==1&&formIsOk()&&next_button.className=='active'){
 				job_types_list.style.display='none';
 				how_many_list.style.display='block';
 				form_progress.value+=20;
+				next_button.classList.remove("active");
+				next_button.classList.add("not_active");
 				formStage++; 
+				formIsOk();
 							 
-			}else if(formStage==2){
+			}else if(formStage==2&&formIsOk()&&next_button.className=='active'){
 				how_many_list.style.display='none';
 				height_list.style.display='block';
 				form_progress.value+=20;
+				next_button.classList.remove("active");
+				next_button.classList.add("not_active");
 				formStage++; 
-			}else if(formStage==3){
+				formIsOk();
+			}else if(formStage==3&&formIsOk()&&next_button.className=='active'){
 				height_list.style.display='none';
 				job_description.style.display='block';
 				form_progress.value+=30;
+				//next_button.classList.replace("active","not_active");
+				//formIsOk();
 				formStage++; 
 							 
-			}else if(formStage==4){
+			}else if(formStage==4&&formIsOk()&&next_button.className=='active'){
 				job_description.style.display='none';
 				contact_fields.style.display='block';
 				form_progress.value+=30;
+				next_button.classList.remove("active");
+				next_button.classList.add("not_active");
+				//formIsOk();
+				error_text.innerHTML="Please add best contact number."
 				formStage++;
+			}else if(formStage==5&&formIsOk()&&next_button.className=='active'){
+				//contact_fields.style.display='block';
+				//next_button.classList.replace("active","not_active");
+				formIsOk();
+				//formStage++;
+				console.log("SENDING FORM");
+			}else{
+				if(formStage!=5){
+					error_message.classList.add("animate_me");
+				}else{
+					error_message.classList.remove("animate_me");
+					error_message.classList.add("animate_me_phone");
+					error_message.style.top="420px";
+				}
 			}
 			console.log(formStage);
+		}
+		function backStep(){
+			if(formStage==1){
+
+			}else if(formStage==2){
+				how_many_list.style.display='none';
+				job_types_list.style.display='block';
+				form_progress.value-=20;
+				back_button.classList.remove("active");
+				back_button.classList.add("not_active");
+				next_button.classList.remove("not_active");
+				next_button.classList.add("active");
+				formIsOk();
+				formStage--; 
+							 
+			}else if(formStage==3){
+				height_list.style.display='none';
+				how_many_list.style.display='block';
+				form_progress.value-=20;
+				next_button.classList.remove("not_active");
+				next_button.classList.add("active");
+				formIsOk();
+				formStage--; 
+			}else if(formStage==4){
+				job_description.style.display='none';
+				height_list.style.display='block';
+				form_progress.value-=30;
+				next_button.classList.remove("not_active");
+				next_button.classList.add("active");
+				formIsOk();
+				formStage--; 
+							 
+			}else if(formStage==5){
+				contact_fields.style.display='none';
+				job_description.style.display='block';
+				form_progress.value-=30;
+				next_button.classList.remove("not_active");
+				next_button.classList.add("active");
+				formIsOk();
+				formStage--;
+			}
+			error_message.classList.remove("animate_me");
+			error_message.classList.remove("animate_me_phone");
+			console.log(formStage);
+		}
+		function closeForm(){
+			form_shadow.style.display="none";
+		}
+		function formIsOk(){
+			if(formStage==1){
+				var elements=document.getElementsByName("Job Type");
+				for(var i=0;i<elements.length;i++){
+					if(elements[i].checked){
+						next_button.classList.remove("not_active");
+						next_button.classList.add("active");
+						return true;
+
+					}
+				}
+			}else if(formStage==2){
+				var elements=document.getElementsByName("Number of trees");
+				for(var i=0;i<elements.length;i++){
+					if(elements[i].checked){
+						next_button.classList.remove("not_active");
+						next_button.classList.add("active");
+						return true;
+
+					}
+				}
+			}else if(formStage==3){
+				var elements=document.getElementsByName("Tree Height");
+				for(var i=0;i<elements.length;i++){
+					if(elements[i].checked){
+						next_button.classList.remove("not_active");
+						next_button.classList.add("active");
+						return true;
+
+					}
+				}
+			}else if(formStage==4){
+					next_button.classList.remove("not_active");
+					next_button.classList.add("active");
+					return true;
+			}else if(formStage==5){
+				var client_contact=document.getElementsByClassName("form_input");
+				var elements=document.getElementsByName("Call or email");
+					if(client_contact[0].value!=""&&client_contact[1].value!=""){
+						for(var i=0;i<elements.length;i++){
+							if(elements[i].checked){
+								return true;
+							}
+						}
+					}
+
+			}else{
+				return false;
+			}
+
 		}
 		/*
 		function nextStep(){

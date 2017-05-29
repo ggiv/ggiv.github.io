@@ -3,7 +3,7 @@ body{
  //   background-image: url('view1.png');
    // background-position-x: -395px;
     background: #eee;
-    overflow: hidden;
+     overflow: hidden;
     
 }
 
@@ -77,6 +77,8 @@ body{
     justify-content:center;
     align-items: center;
     display: none;
+    /* REMOVE THIS !!!*/
+    //width: 90vw;
 }
 .form_body{
     width: 684px!important;;
@@ -89,6 +91,48 @@ body{
     height: 600px;
     border-left: solid 1px #f3f3f3;
     background:white;
+    background-size: 90%;
+    background-image: url("img2.png");
+    background-repeat: no-repeat;
+    background-position: 50%;
+    font-family: "Montserrat", Helvetica, Arial;
+    color: #434443;
+
+
+}
+.form_panel p{
+    margin-left: 70px;
+    margin-right: 70px;
+    margin-top:10px;
+    font-size: 20px;
+    text-align: center;
+}
+.form_panel .panel_line_two{
+    margin-left: 55px;
+    font-size: 15px;
+}
+.form_panel .panel_line_three{
+    margin-top:330px;
+    margin-left: 77px;
+    font-size: 15px;
+}
+.form_panel .panel_line_four{
+    margin-top:70px;
+    margin-left: 77px;
+    font-size: 15px;
+}
+.form_panel button{
+    height: 25px;
+    width: 25px;
+    background-image: url("x.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-color: white;
+    position: relative;
+    left: 92%;
+    border:none;
+    cursor: pointer;
+    
 }
 .form_radio_box{
     list-style: none;
@@ -207,7 +251,7 @@ body{
     font-family: "Montserrat", Helvetica, Arial;
     font-size: 15px;
     cursor: pointer;
-    visibility: hidden;
+    //visibility: hidden;
 }
 #HowManyList{
     display: none;
@@ -276,6 +320,58 @@ body{
 .tabbed_radio{
     position: relative;
     transform: translate(15px,0px);
+}
+.unactive{
+    visibility: hidden;
+}
+.error_message_arrow{
+    width: 15px;
+    height: 15px;
+    position: relative;
+    top:-1px;
+    left:10px;
+    background: #C74450;
+    transform: rotate(45deg);
+}
+.error_message{
+    position: absolute;
+    left:170px;
+    top:225px;
+    width: 200px;
+    height: 20px;
+    background: #C74450;
+    display: flex;
+    padding: 0px;
+    border-radius:5px;
+    border: solid 1px white;
+    display: none;
+}
+.error_message.animate_me{
+    display: flex;
+    animation: anim_1 0.3s linear;  
+}
+.error_message.animate_me_phone{
+    display: flex;
+    animation: anim_2 0.3s linear;  
+}
+.error_message p{
+    position: relative;
+    padding: 0px;
+    left: -10px;
+    margin-top: 4px;
+    margin-right: 0px;
+    padding: 0px;
+    font-size: 9px;
+    color:white;
+    font-family: "Montserrat", Helvetica, Arial;
+}
+@keyframes anim_1{
+    0%{top:250px;opacity:0}
+    100%{top:225px;opacity:1}
+}
+@keyframes anim_2{
+    0%{top:445px;opacity:0}
+    100%{top:420px;opacity:1}
 }
 /*###################FONTS###################*/
 @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
