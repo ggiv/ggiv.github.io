@@ -1,4 +1,7 @@
 /* Base CSS */
+body{
+    padding: 0px !important;
+}
 .alignleft {
     float: left;
     margin-right: 15px;
@@ -25,6 +28,9 @@ h6 {
     margin: 0 0 15px;
     font-weight: 700;
 }
+#price_screen1{
+    font-size: 30px;
+}
 body {
 font-family: 'Open Sans', sans-serif;
     font-size: 17px;
@@ -49,25 +55,33 @@ a:hover { text-decoration: none }
 }
 label{
     display:block;
+    font-size:15px!important;
 }
 
-
 .section-form form select {
-    height: 48px;
+    height: 40px;
     width: 380px;
+    font-size: 15px;
 }
 .section-form {
     background: #F6F6F6 none repeat scroll 0 0;
     padding: 30px;
+    padding-top:20px;
     font-family: 'Montserrat', sans-serif;
     font-size: 17px;
     line-height: 1.5;
     font-weight: 300;
-    max-width: 440px;
+    width: 355px;
+    max-height: 570px;
+    left: 0px !important;
+    position: fixed;
+}
+.section-form button{
+    height: 50px; 
 }
 
 .section-form form select {
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 label {
