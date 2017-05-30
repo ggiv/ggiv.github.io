@@ -77,8 +77,9 @@ label{
     position: fixed;
 }
 .section-form button{
-    height: 45px;
-    padding-top: 10px;
+    height: 40px;
+    padding-top: 7px;
+    font-size: 88%;
 }
 
 .section-form form select {
