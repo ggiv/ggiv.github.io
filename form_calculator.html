@@ -13,12 +13,16 @@
         <link href="assets/css/style.css" rel="stylesheet">
         <link href="assets/css/responsive.css" rel="stylesheet">
         <script>
+			(function(){
 			var price;
 			var how_many;
 			var tree_height;
 			var jobtype;
 			var tree_location;
 			var FC;
+			var thankYouPage="http://www.au.golandscapequotes.com.au/success1";
+			var button;
+			var formStage=1;
 			var minmax=[
 			[250,610],
 [350,	825],
@@ -170,15 +174,24 @@
 					tree_height=document.getElementById("height_screen1");
 					jobtype=document.getElementById("jobtype_screen1");
 					tree_location=document.getElementById("location_screen1");
+					button=document.getElementById("form_button");
+					button.addEventListener("click",buttonClicked);
+					console.log(button);
+					document.getElementById("formStep2").style.display="none";
 					
+					how_many.addEventListener("change",fieldChanged);
+					tree_height.addEventListener("change",fieldChanged);
+					tree_location.addEventListener("change",fieldChanged);
+					jobtype.addEventListener("change",fieldChanged);
+
+			
 
 			}
-			document.onclick=function(){
-				console.log(how_many.value);
-				console.log(tree_height.value);
-				console.log(jobtype.value);
-				console.log(tree_location.value);
-				console.log("############");
+			
+
+			
+			function fieldChanged(){
+
 				FC=getFieldsCombination();
 				var current_price;
 				switch (FC){
@@ -340,6 +353,75 @@
 					var combination=how_many.value.toString()+tree_height.value.toString()+jobtype.value.toString()+tree_location.value.toString();
 					return combination;
 			}
+			function buttonClicked(){
+				console.log("click");
+				/*
+				parent.document.location.href=thankYouPage;
+				
+				*/
+				if(formStage==1){
+					how_many.options[3].value="4+";
+					tree_height.options[0].value="1 storey house";
+					tree_height.options[1].value="2 storey house";
+					tree_height.options[2].value="3 storey house";
+					
+					jobtype.options[0].value="Tree removal";
+					jobtype.options[1].value="Tree prune";
+					jobtype.options[2].value="Palm removal";
+					jobtype.options[3].value="Palm prune";
+					
+					tree_location.options[0].value="Access via a driveway (wide)";
+					tree_location.options[1].value="Access via a gate (narrow)";
+					tree_location.options[2].value="Vacant land";
+					
+					formStage=2;
+					
+					document.getElementById("input_area").attributes.required="required";
+					document.getElementById("input_name").attributes.required="required";
+					document.getElementById("input_email").attributes.required="required";
+					document.getElementById("input_contactnumber").attributes.required="required";
+
+					
+
+					document.getElementById("formStep1").style.display="none";
+					document.getElementById("formStep2").style.display="block";
+					
+					
+
+					}else if(formStage==2){
+						console.log("submit");
+						var area=document.getElementById("input_area");
+						var name=document.getElementById("input_name");
+						var email=document.getElementById("input_email");
+						var number=document.getElementById("input_contactnumber");
+						var ok=true;
+						if(area.value==""){
+							ok=false;
+							area.style.border="1px solid red";
+						}
+						if(name.value==""){
+							ok=false;
+							name.style.border="1px solid red";
+						}
+						if(email.value==""){
+							ok=false;
+							email.style.border="1px solid red";
+						}
+						if(number.value==""){
+							ok=false;
+							number.style.border="1px solid red";
+						}
+						if(ok){
+							setTimeout(function(){
+								parent.document.location.href=thankYouPage;
+							},1000);
+						}
+						
+					}
+					
+				}
+				
+			})();
 			
 				
         </script>
@@ -349,43 +431,57 @@
         <section class="section-padding">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6 col-md-offset-3">
+                    <div class="col-md-6">
                         <div class="section-form">
-                            <form action="">
-                                <label>How many trees?</label>
-                                 <select class="custom-select" id="homany_screen1">
-                                    <option value="1" selected>1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4+</option>
-                                  </select>
-                                  
-                                <label>What is the approximate height of the tree?</label>
-                                 <select class="custom-select" id="height_screen1">
-                                    <option value="1" selected>1 stroey house</option>
-                                    <option value="2">2 stroey house</option>
-                                    <option value="3">3 stroey house +</option>
-                                  </select>
-                                  
-                                  
-                                <label>Job type?</label>
-                                 <select class="custom-select" id="jobtype_screen1">
-                                    <option value="1" selected>Tree removal</option>
-                                    <option value="2">Tree prune</option>
-                                    <option value="3">Palm removal</option>
-                                    <option value="4">Palm prune</option>
-                                  </select>
-                                  
-                                  
-                                <label>Trees location on your property</label>
-                                 <select class="custom-select" id="location_screen1">
-                                    <option value="1" selected>Access via a driveway (wide)</option>
-                                    <option value="2">Access via a gate (narrow)</option>
-                                    <option value="3">Vacant land</option>
-                                  </select>
-                                <h3 id="price_screen1">$250-$610</h3>
-                                <p>expected price rate in australia</p>
-                                <button type="submit" class="form-submit-btn">resquest a quote</button>
+                            <form action="" onsubmit="return false">
+								<div id="formStep1">
+									<label>How many trees?</label>
+									 <select class="custom-select" id="homany_screen1">
+										<option value="1" selected>1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+										<option value="4">4+</option>
+									  </select>
+									  
+									<label>What is the approximate height of the tree?</label>
+									 <select class="custom-select" id="height_screen1" value="">
+										<option value="1" selected>1 stroey house</option>
+										<option value="2">2 stroey house</option>
+										<option value="3">3 stroey house +</option>
+									  </select>
+									  
+									  
+									<label>Job type?</label>
+									 <select class="custom-select" id="jobtype_screen1" value="">
+										<option value="1" selected>Tree removal</option>
+										<option value="2">Tree prune</option>
+										<option value="3">Palm removal</option>
+										<option value="4">Palm prune</option>
+									  </select>
+									  
+									  
+									<label>Trees location on your property</label>
+									 <select class="custom-select" id="location_screen1">
+										<option value="1" selected>Access via a driveway (wide)</option>
+										<option value="2">Access via a gate (narrow)</option>
+										<option value="3">Vacant land</option>
+									  </select>
+									<h3 id="price_screen1">$310-$600</h3>
+									<p>expected price rate in australia</p>
+                                </div>
+                                <div id="formStep2">
+									<label>Your area</label>
+									<input class="custom-input" id="input_area" name="Your Area" placeholder="e.g. Sydney, 3000" value=""  />
+									<label>First name</label>
+									<input class="custom-input" id="input_name" name="First Name" placeholder="First name" value=""  />
+									<label>E-mail</label>
+									<input class="custom-input" id="input_email" name="E-mail" placeholder="E-mail" value=""  />
+									<label>Best contact number</label>
+									<input class="custom-input" id="input_contactnumber" name="Contact number" placeholder="Best contact number" value="" />
+									<label>Job description</label>
+									<textarea "class="custom-input" id="input_jobdescription" name="Job description" placeholder="Job description"></textarea>
+								</div>
+                                <button type="" class="form-submit-btn" id="form_button">resquest a quote</button>
                             </form>
                         </div>
                     </div>
