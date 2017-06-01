@@ -128,4 +128,11 @@ label {
 #formStep2{
     display: none;
 }
+#formStep2 textarea{
+    margin-bottom:20px;
+}
+#formStep2 label{
+    margin-top: 10px!important;;
+}
+
 
