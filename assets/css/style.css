@@ -125,4 +125,7 @@ label {
     padding: 15px 20px;
     text-transform: uppercase;
 }
+#formStep2{
+    display: none;
+}
 
