@@ -53,9 +53,20 @@ a:hover { text-decoration: none }
     padding: 0.375rem 1.75rem 0.375rem 0.75rem;
     vertical-align: middle;
 }
-label{
-    display:block;
-    font-size:12px!important;
+.custom-input{
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 0.25rem;
+    color: #464a4c;
+    display: inline-block;
+    height: calc(3rem + 2px);
+    line-height: 1.25;
+    width: 100%;
+    padding: 6px 28px 6px 12px;
+    padding: 0.375rem 1.75rem 0.375rem 0.75rem;
+    vertical-align: middle;
+    margin-bottom:20px;
+    background: white;
+    font-size: 85%;
 }
 
 .section-form form select {
@@ -64,7 +75,7 @@ label{
     font-size: 13px;
 }
 .section-form {
-    //background: #F6F6F6 none repeat scroll 0 0;
+   // background: #F6F6F6 none repeat scroll 0 0;
     padding: 30px;
     padding-top:20px;
     font-family: 'Montserrat', sans-serif;
@@ -72,9 +83,17 @@ label{
     line-height: 1.5;
     font-weight: 300;
     width: 340px;
-    max-height: 530px;
+    max-height: 570px;
     left: 0px !important;
     position: fixed;
+}
+.section-form textarea{
+    margin-bottom: 20px;
+    height: 100px;
+    resize: none;
+    width: 100%;
+    padding: 5px;
+    font-size: 85%;
 }
 .section-form button{
     height: 40px;
@@ -90,7 +109,7 @@ label{
 
 label {
     color: #2c2d2c;
-    font-size: 11px;
+    font-size: 15px;
     font-weight: 400;
     line-height: 1.5;
     margin: 0 0 5px;
@@ -125,14 +144,31 @@ label {
     padding: 15px 20px;
     text-transform: uppercase;
 }
+
 #formStep2{
-    display: none;
+    //position: absolute;
+    //opacity: 0.2;
+    top:0px;
 }
-#formStep2 textarea{
-    margin-bottom:20px;
+
+#formStep2{
+   display: none;
 }
-#formStep2 label{
-    margin-top: 10px!important;;
+/*
+#formStep1{
+     position: absolute;
+    width: 330px;
+    left: 100%;
+    display: block !important;
+  
+}
+*/
+#formStep2 input{
+    margin-bottom:18px;
+    height: 38px;
+    
 }
 
 
+
+*/
