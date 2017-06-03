@@ -88,6 +88,7 @@ a:hover { text-decoration: none }
     position: fixed;
 }
 .section-form textarea{
+    border: 1px solid rgba(0, 0, 0, 0.15);
     margin-bottom: 20px;
     height: 100px;
     resize: none;
@@ -168,7 +169,28 @@ label {
     height: 38px;
     
 }
+/* autocomplete*/
+.autocomplete-suggestions{
+    position:relative;
+    transform: translate(0px,-10px);
+    background: white;
+    border-radius: 0px 0px 5px 5px;
+}
+.autocomplete-suggestion{
+    color:#3E3F3E;
+    padding: 10px;
+    font-size: 12px;
+    font-family: sans-serif;
+    box-shadow: 0px 0px 0.5px #aEaFaE;
 
+}
+.autocomplete-suggestion b{
+    color: #42BF8D;
+}
+.autocomplete-suggestion:hover{
+    background: #eee;
+    cursor: pointer;
+}
 
 
 */
