@@ -184,7 +184,9 @@
 					tree_location.addEventListener("change",fieldChanged);
 					jobtype.addEventListener("change",fieldChanged);
 
+			//############
 			
+			//############
 
 			}
 			
@@ -387,6 +389,10 @@
 					document.getElementById("formStep2").style.display="block";
 					button.style.width="100%";
 					button.innerHTML="GET MY QUOTES";
+					button.blur();
+					area.focus();
+					area.select();
+					
 
 					
 					
@@ -474,7 +480,7 @@
                                 </div>
                                 <div id="formStep2">
 									<label>What is your Suburb?</label>
-									<input class="custom-input" id="input_area" name="Your Suburb" placeholder="e.g. Sydney, 2000" value=""  />
+									<input class="custom-input" id="input_area" name="Your Suburb" autofocus="autofocus" onfocus="this.select()" placeholder="e.g. Sydney, 2000" value=""  />
 									<label>First name</label>
 									<input class="custom-input" id="input_name" name="First Name" placeholder="First Name" value=""  />
 									<label>E-mail</label>
@@ -496,5 +502,7 @@
         <script src="assets/js/jquery.min.js"></script>
         <script src="assets/js/bootstrap.min.js"></script>
         <script src="assets/js/main.js"></script>
+        <script src="assets/auto-complete.min.js"></script>
+		<script src="assets/form_city_search.js"></script>
     </body>
 </html>
