@@ -52,10 +52,14 @@
 		next_button.addEventListener('click',nextStep2);
 		back_button.addEventListener('click',backStep);
 		close_button.addEventListener('click',closeForm);
+		document.getElementById("nothing_else_to_add").addEventListener('click',nothingToAdd);
 		for(var i=0;i<radio_buttons.length;i++){
 			radio_buttons[i].addEventListener('click',radioSpanSelect);
 			radio_buttons[i].style["background-image"]="url(radio_off_2.png)";
 			radio_buttons[i].style["background-color"]="#FFFFFF";
+		}
+		function nothingToAdd(){
+			next_button.click();
 		}
 		function radioSpanSelect(){
 		for(var i=0;i<radio_buttons.length;i++){
@@ -222,6 +226,7 @@
 					if(client_contact[0].value!=""&&client_contact[1].value!=""){
 						for(var i=0;i<elements.length;i++){
 							if(elements[i].checked){
+								console.log('sending emails!!!')
 								return true;
 							}
 						}
