@@ -3,13 +3,15 @@
 	<head>
 		<meta charset="UTF-8"/>
 		<link rel='stylesheet' href='form_autocomplete_001.css'/>
-	<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+	 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> 
+	  <link href="https://fonts.googleapis.com/css?family=Montserrat:300" rel="stylesheet"> 
+	 <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" /> 
 	</head>
 	<body>
 		<div class='city_container'>
-			<form id='form_001' action='' onsubmit='return false;'>
+			<form id='form_001' action='http://gotreequotes.com.au/forms/form003/form_sender_big_form.php' onsubmit='return false;' method='post' target="_top">
 				<div id="input_city_container">
-					<input class="input_input" id='CitySearch' name="City" placeholder="e.g. Sydney, 3000" value=""/>
+					<input class="input_input" id='CitySearch' name="City" placeholder="e.g. Sydney, 2000" value=""/>
 					<div class='input_button' id='city_input_button'></div>
 				</div>
 				<div class='form_body_shadow'>
@@ -23,25 +25,25 @@
 						<ul class='form_radio_box stage_1' id='JobTypesList'>
 						<p class='form_text'>What type of job do you need?</p>
 						<li class='list_radio'>
-							<input class='form_radio' type='radio' name='Job Type' value='Tree removal'/><label for="">Tree removal</label>
+							<input class='form_radio' type='radio' name='Job_Type' value='Tree removal'/><label for="">Tree removal</label>
 						</li>
 
 						<li class='list_radio'>
-							<input class='form_radio' type='radio' name='Job Type' value='Tree prune'/><label>Tree prune</label>
+							<input class='form_radio' type='radio' name='Job_Type' value='Tree prune'/><label>Tree prune</label>
 						</li>
 
 						<li class='list_radio'>
-							<input class='form_radio' type='radio' name='Job Type' value='Stump grinding'/><label>Stump grinding</label>
+							<input class='form_radio' type='radio' name='Job_Type' value='Stump grinding'/><label>Stump grinding</label>
 						</li>
 
 						<li class='list_radio'>
-							<input class='form_radio' type='radio' name='Job Type' value='Palm removal'/><label>Palm removal</label>
+							<input class='form_radio' type='radio' name='Job_Type' value='Palm removal'/><label>Palm removal</label>
 						</li>
 						<li class='list_radio'>
-							<input class='form_radio' type='radio' name='Job Type' value='Palm trim'/><label>Palm trim</label>
+							<input class='form_radio' type='radio' name='Job_Type' value='Palm trim'/><label>Palm trim</label>
 						</li>
 						<li class='list_radio'>
-							<input class='form_radio' type='radio' name='Job Type' value='Arborist report'/><label>Arborist report</label>
+							<input class='form_radio' type='radio' name='Job_Type' value='Arborist report'/><label>Arborist report</label>
 						</li>
 
 						</ul>
@@ -49,16 +51,16 @@
 						<ul class='form_radio_box stage_2' id='HowManyList'>
 						<p class='form_text'>How many trees?</p>
 						<li class='list_radio'>
-							<input class='form_radio' type='radio' name='Number of trees' value='1'/><label>1</label>
+							<input class='form_radio' type='radio' name='Number_of_trees' value='1'/><label>1</label>
 						</li>
 						<li class='list_radio'>                                            
-							<input class='form_radio' type='radio' name='Number of trees' value='2'/><label>2</label>
+							<input class='form_radio' type='radio' name='Number_of_trees' value='2'/><label>2</label>
 						</li>
 						<li class='list_radio'>                                            
-							<input class='form_radio' type='radio' name='Number of trees' value='3'/><label>3</label>
+							<input class='form_radio' type='radio' name='Number_of_trees' value='3'/><label>3</label>
 						</li>
 						<li class='list_radio'>                                            
-							<input class='form_radio' type='radio' name='Number of trees' value='4+'/><label>4+</label>
+							<input class='form_radio' type='radio' name='Number_of_trees' value='4+'/><label>4+</label>
 						</li>
 
 						</ul>
@@ -66,15 +68,15 @@
 						<ul class='form_radio_box stage_3' id='heightList'>
 						<p class='form_text'>What is the approximate height of the trees?</p>
 						<li class='list_radio'>
-							<input class='form_radio' type='radio' name='Tree Height' value='Smaller than 5m'/><label>Smaller than 5m</label>
+							<input class='form_radio' type='radio' name='Tree_Height' value='Smaller than 5m'/><label>Smaller than 5m</label>
 						</li>
 
 						<li class='list_radio'>
-							<input class='form_radio' type='radio' name='Tree Height' value='Greater than 5m'/><label>Greater than 5m</label>
+							<input class='form_radio' type='radio' name='Tree_Height' value='Greater than 5m'/><label>Greater than 5m</label>
 						</li>
 
 						<li class='list_radio'>
-							<input class='form_radio' type='radio' name='Tree Height' value='Not Sure'/><label>Not sure</label>
+							<input class='form_radio' type='radio' name='Tree_Height' value='Not Sure'/><label>Not sure</label>
 						</li>
 
 						</ul>
@@ -82,29 +84,34 @@
 						<ul class='form_radio_box stage_4' id='JobDescription'>
 						<p class='form_text'>Job Description </p>
 						<li class='list_radio'>
-							<textarea class='desctiption_textbox' name='Job Description' placeholder="Tell us more about trees.."></textarea>
+							<textarea class='desctiption_textbox' name='Job_Description' placeholder="Tell us more about trees.."></textarea>
 							<li id='nothing_else_to_add'>I have nothing lese to add.</li>
 						</li>
 						</ul>
 						<!-- ######################### CONTACTS ###################-->
 						<ul class='form_radio_box stage_5' id='ContactFields'>
 							<p class='form_text small_form_text'>Only the 3 businesses quoting your job can see your details </p>
-							<li class='list_radio no_radio'>
 								<p class='form_text no_form_text'>First name</p>
-								<input class='form_input' name='First name'/>
-							</li>
-							<li class='list_radio no_radio'>
+								<input class='form_input' name='First_name'/>
 								<p class='form_text no_form_text'>Best contact number</p>
-								<input class='form_input' name='Best contact number'/>
+								<input class='form_input' name='Best_contact_number'/>
 								<p id='small_blue_text'>Your phone number is used to give you free quotes</p>
 							</li>
-							<li class='list_radio tabbed_radio '>
-							<input class='form_radio' type='radio' name='Call or email' value='Smaller than 5m'/><label>I'm ok to receiving a call to book in a time to view job</label>
+							<li class='list_radio tabbed_radio'>
+							<input class='form_radio'  type='radio' name='Call_or_email' value='Phone call' checked /><label>I'm ok to receiving a call to book in a time to view job</label>
 							</li>
 							<li class='list_radio tabbed_radio'>
-							<input class='form_radio' type='radio' name='Call or email' value='Smaller than 5m'/><label>I would prefer a text or email</label>
+							<input class='form_radio' type='radio' name='Call_or_email' value='Text or email'/><label>I would prefer a text or email</label>
 							</li>
-						</ul>					
+						</ul>
+						<!-- ######################### CONTACTS-email ###################-->
+						<ul class='form_radio_box stage_5' id='EmailField'>
+							<p class='form_text small_form_text'>Keep an eye on your email for quotes that we send you from relevant businesses. </p>
+								<p class='form_text no_form_text'>Which email should we send your quotes to?</p>
+								<input class='form_input' id='email_field_01'name='E_mail' placeholder='e.g. jon@nightwatch.com'/>
+								<p id='small_blue_text'>We will notify you here when quotes come in.</p>
+							</li>
+						</ul>										
 						<!-- ######################### End ###################-->
 
 						<div id='form_controls'>
@@ -112,12 +119,12 @@
 							<button id='next_button'class='not_active' action=''>NEXT</button>
 						</div>
 					</div>
-					<div class='form_panel'>
-						<button id="close_form"></button>
+					<div class='form_panel' id='form_panel'>
 						<p>What to expect?</p>
 						<p class="panel_line_two">Up to 3 free quotes within 24 hours from qualified businesses</p>
-						<p class="panel_line_three">All businesses voted "best price to quality balance" by 100s of previous users</p>
-						<p class="panel_line_four">Have a question? Call us 1800 25 22 208</p>
+						<p class="panel_line_three">All businesses voted <b>"best price to quality balance" </b> by 100s of previous users</p>
+						<p class="panel_line_four">Call us 1800 25 22 208</p>
+						<button id="panel_button">CONTINUE</button>
 					</div>
 				</div>
 			</form>
