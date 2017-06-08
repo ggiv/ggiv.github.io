@@ -40,19 +40,40 @@
 		var height_list=document.getElementById("heightList");
 		var job_description=document.getElementById("JobDescription");
 		var contact_fields=document.getElementById("ContactFields");
+		var email_field=document.getElementById("EmailField");
 		var close_button=document.getElementById("close_form");
 		var error_message=document.getElementById("error_message_1");
 		var error_text=document.getElementById("error_text");
+		var main_form=document.getElementById("form_001");
+		var email=document.getElementById('email_field_01');
+		var panel_button=document.getElementById('panel_button');
+		var panel=document.getElementById('form_panel');
 
+		var SUBMIT_FORM=false;
+		
 
 		
 
-
+		main_form.onsubmit=submitForm;
 		city_input_button.addEventListener('click',citySelected);
 		next_button.addEventListener('click',nextStep2);
 		back_button.addEventListener('click',backStep);
-		close_button.addEventListener('click',closeForm);
 		document.getElementById("nothing_else_to_add").addEventListener('click',nothingToAdd);
+		console.log(panel_button.addEventListener('click',panelButtonClicked));
+		
+		function panelButtonClicked(){
+			console.log('click');
+			panel.style.display='none';
+		}
+
+		email.oninput=function(){
+			if(email.value.indexOf('@')>0&&email.value.indexOf('.')>0){
+				next_button.classList.remove("not_active");
+				next_button.classList.add("active");
+			}
+			};
+			
+		
 		for(var i=0;i<radio_buttons.length;i++){
 			radio_buttons[i].addEventListener('click',radioSpanSelect);
 			radio_buttons[i].style["background-image"]="url(radio_off_2.png)";
@@ -61,6 +82,15 @@
 		function nothingToAdd(){
 			next_button.click();
 		}
+		function submitForm(){
+			if(SUBMIT_FORM){
+				return true;
+			}else{
+				return false;
+			}
+		}
+		radio_buttons[14].style["background-image"]="url(radio_on_2.png)";
+		radio_buttons[14].style["background-color"]="#FFFFFF";
 		function radioSpanSelect(){
 		for(var i=0;i<radio_buttons.length;i++){
 			//radio_buttons[i].style["background-image"]="url(radio_off_2.png)";
@@ -93,6 +123,8 @@
 				form_progress.value+=20;
 				next_button.classList.remove("active");
 				next_button.classList.add("not_active");
+				back_button.style.display="block";
+
 				formStage++; 
 				formIsOk();
 							 
@@ -107,26 +139,38 @@
 			}else if(formStage==3&&formIsOk()&&next_button.className=='active'){
 				height_list.style.display='none';
 				job_description.style.display='block';
-				form_progress.value+=30;
+				form_progress.value+=20;
 				//next_button.classList.replace("active","not_active");
 				//formIsOk();
 				formStage++; 
 							 
 			}else if(formStage==4&&formIsOk()&&next_button.className=='active'){
 				job_description.style.display='none';
-				contact_fields.style.display='block';
-				form_progress.value+=30;
+				email_field.style.display='block';
+				form_progress.value+=20;
 				next_button.classList.remove("active");
 				next_button.classList.add("not_active");
+				error_text.innerHTML="Please add e-mail."
+				error_message.style.visibility="hidden";
+
+
 				//formIsOk();
-				error_text.innerHTML="Please add best contact number."
 				formStage++;
 			}else if(formStage==5&&formIsOk()&&next_button.className=='active'){
+				email_field.style.display='none';
+				contact_fields.style.display='block';
+				form_progress.value+=20;
+				formStage++;
+				error_text.innerHTML="Please add best contact number."
+				error_message.style.visibility="visible";
+
+			}else if(formStage==6&&formIsOk()&&next_button.className=='active'){
 				//contact_fields.style.display='block';
 				//next_button.classList.replace("active","not_active");
 				formIsOk();
 				//formStage++;
 				console.log("SENDING FORM");
+				SUBMIT_FORM=true;
 			}else{
 				if(formStage!=5){
 					error_message.classList.add("animate_me");
@@ -163,16 +207,25 @@
 			}else if(formStage==4){
 				job_description.style.display='none';
 				height_list.style.display='block';
-				form_progress.value-=30;
+				form_progress.value-=20;
 				next_button.classList.remove("not_active");
 				next_button.classList.add("active");
 				formIsOk();
+			
 				formStage--; 
 							 
 			}else if(formStage==5){
-				contact_fields.style.display='none';
+				email_field.style.display='none';
 				job_description.style.display='block';
-				form_progress.value-=30;
+				form_progress.value-=20;
+				next_button.classList.remove("not_active");
+				next_button.classList.add("active");
+				formIsOk();
+				formStage--;
+			}else if(formStage==6){
+				contact_fields.style.display='none';
+				email_field.style.display='block';
+				form_progress.value-=20;
 				next_button.classList.remove("not_active");
 				next_button.classList.add("active");
 				formIsOk();
@@ -187,7 +240,7 @@
 		}
 		function formIsOk(){
 			if(formStage==1){
-				var elements=document.getElementsByName("Job Type");
+				var elements=document.getElementsByName("Job_Type");
 				for(var i=0;i<elements.length;i++){
 					if(elements[i].checked){
 						next_button.classList.remove("not_active");
@@ -197,7 +250,7 @@
 					}
 				}
 			}else if(formStage==2){
-				var elements=document.getElementsByName("Number of trees");
+				var elements=document.getElementsByName("Number_of_trees");
 				for(var i=0;i<elements.length;i++){
 					if(elements[i].checked){
 						next_button.classList.remove("not_active");
@@ -207,7 +260,7 @@
 					}
 				}
 			}else if(formStage==3){
-				var elements=document.getElementsByName("Tree Height");
+				var elements=document.getElementsByName("Tree_Height");
 				for(var i=0;i<elements.length;i++){
 					if(elements[i].checked){
 						next_button.classList.remove("not_active");
@@ -219,10 +272,17 @@
 			}else if(formStage==4){
 					next_button.classList.remove("not_active");
 					next_button.classList.add("active");
+					
 					return true;
 			}else if(formStage==5){
+				if(email.value.indexOf('@')>0){
+					next_button.classList.remove("not_active");
+					next_button.classList.add("active");
+					return true;
+				}
+			}else if(formStage==6){
 				var client_contact=document.getElementsByClassName("form_input");
-				var elements=document.getElementsByName("Call or email");
+				var elements=document.getElementsByName("Call_or_email");
 					if(client_contact[0].value!=""&&client_contact[1].value!=""){
 						for(var i=0;i<elements.length;i++){
 							if(elements[i].checked){
