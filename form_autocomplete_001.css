@@ -71,6 +71,7 @@ body{
     position: absolute;
     width: 100%;
     height: 100%;
+    padding: 0!important;
 }
 
 .form_body_shadow{
@@ -79,13 +80,11 @@ body{
     left:0px;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.7);
     display: flex;
     justify-content:center;
     align-items: center;
     display: none;
-    /* REMOVE THIS !!!*/
-    //width: 90vw;
+    padding: 0!important;
 }
 .form_body{
     width: 100%!important;;
@@ -101,7 +100,7 @@ body{
     background:white;
     top:10%;
     left: 0!important;
-    background-size: 300px;
+    background-size: 70%;
     background-image: url("img2.png");
     background-repeat: no-repeat;
     background-position: 50% 43%;
@@ -121,23 +120,23 @@ body{
     left: 0!important;
     text-align: center;
     padding: 0px 10px 0 10px;
-       font-size: 15px;
-        font-weight: 300;
+    font-size: 1px;
+    font-weight: 300;
 }
 .form_panel p:nth-child(1){
     font-size:20px;
     margin-top:3%;
 }
 .form_panel p:nth-child(2){
-    font-size:20px;
+    font-size:16px;
     margin-top: 0%;
 }
 .form_panel p:nth-child(3){
-    font-size:20px;
+    font-size:16px;
     margin-top: 37%;
 }
 .form_panel p:nth-child(4){
-    font-size:20px;
+    font-size:16px;
     margin-top: 10%;
 }
 #panel_button{
@@ -160,8 +159,7 @@ body{
     width: 100%!important;
     height: 50px!important;
     padding: 0!important;
-    align-self: end;
-    bottom: 0;
+    bottom: 0!important;
 }
 #form_controls button{
     width: 100px!important;
