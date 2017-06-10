@@ -1,17 +1,17 @@
-
+*{
+    box-sizing: border-box;
+}
 body{
- //   background-image: url('view1.png');
-   // background-position-x: -395px;
     background: #eee;
      overflow: hidden;
-    
 }
 
 .city_container{
     width: 100%;
-    position: fixed;
+    height: 100%;
+    position: absolute;
     top:0;
-    left: 0px;
+    left: 0;
     display: flex;
     padding: 0px;
     //justify-content: space-around;
@@ -67,13 +67,18 @@ body{
     cursor: pointer;
 }
 /*##############FORM BODY##################*/
+#form_001{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
 
 .form_body_shadow{
-    position: fixed;
+    position: absolute;
     top:0px;
     left:0px;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     background: rgba(0,0,0,0.7);
     display: flex;
     justify-content:center;
@@ -83,28 +88,31 @@ body{
     //width: 90vw;
 }
 .form_body{
-    width: 100vw!important;;
-    height: 100vh!important;
+    width: 100%!important;;
+    height: 100%!important;
     background: white;
+    display: flex;
+    flex-direction: column;
 }
 .form_panel{
-    width: 100vw;
-    height: 90vh;
+    width: 100%;
+    height: 90%;
     padding-top: 20px;
-    border-left: solid 1px #f3f3f3;
     background:white;
-    top:15vh;
-    background-size: 400px;
+    top:10%;
+    left: 0!important;
+    background-size: 300px;
     background-image: url("img2.png");
     background-repeat: no-repeat;
-    background-position: 50%;
-    //font-family: Lato, Helvetica, Arial !important;
+    background-position: 50% 43%;
     font-family:"Montserrat";
     color: #484848;
     position: absolute;
-    box-shadow: 0px -30vh rgba(0,0,0,0.6);
-    padding-left: 20px;
-    padding-right: 50px;    
+    box-shadow: 0px -30vh rgba(0,0,0,0.6);   
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    justify-items: center;
 }
 .form_panel p{
     width: 100%;
@@ -112,35 +120,38 @@ body{
     margin-left: 0px!important;
     left: 0!important;
     text-align: center;
-    padding-left: 20px!important;
-    padding-right: 30px!important;
+    padding: 0px 10px 0 10px;
+       font-size: 15px;
+        font-weight: 300;
 }
 .form_panel p:nth-child(1){
     font-size:20px;
-    margin-top:3vh;
+    margin-top:3%;
 }
 .form_panel p:nth-child(2){
     font-size:20px;
-    margin-top: 0px;
+    margin-top: 0%;
 }
 .form_panel p:nth-child(3){
     font-size:20px;
-    margin-top: 45vh;
+    margin-top: 37%;
 }
 .form_panel p:nth-child(4){
     font-size:20px;
-    margin-top: 8vh;
+    margin-top: 10%;
 }
 #panel_button{
     border:1px solid #58595b;
     height:70px;
     width: 150px;
+    margin-bottom: 10px;
     background: white;
     font-family: "Montserrat", Helvetica, Arial;
     font-size: 15px;
     cursor: pointer;
-    position:relative;
-    left: 37vw;
+    justify-self: center;
+    align-self: center;
+    
 }
 
 #form_controls{
@@ -149,7 +160,8 @@ body{
     width: 100%!important;
     height: 50px!important;
     padding: 0!important;
-    top:92vh!important;
+    align-self: end;
+    bottom: 0;
 }
 #form_controls button{
     width: 100px!important;
@@ -169,47 +181,7 @@ body{
     //width: 100%;
     //left: 0;
 }
-*/
-.form_panel p{
-    margin-left: 50px;
-    margin-right: 60px;
-    margin-top:10px;
-    font-size: 19px;
-    text-align: center;
-}
-.form_panel .panel_line_two{
-    margin-left: 60px;
-    font-size: 15px;
-        font-weight: 300;
 
-}
-.form_panel .panel_line_three{
-    margin-top:255px;
-    margin-left: 60px;
-    font-size: 15px;
-        font-weight: 300;
-
-}
-.form_panel .panel_line_four{
-    margin-top:47px;
-    margin-left: 70px;
-    font-size: 15px;
-    font-weight: 300;
-
-}
-.form_panel button{
-    height: 25px;
-    width: 25px;
-    background-image: url("x.png");
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-color: white;
-    position: relative;
-    left: 92%;
-    border:none;
-    cursor: pointer;
-    
-}
 .form_radio_box{
     list-style: none;
     padding: 0px;
@@ -232,6 +204,8 @@ body{
     font-size: 15px;
     font-family: "Montserrat", Helvetica, Arial;
     color: #58595B;
+    padding-right: 30px;
+    margin: 10px;
 }
 .form_radio{
     width: 20px;
@@ -295,16 +269,13 @@ body{
 
 #form_controls{
     position: relative;
-    top:200px;
     margin-top:0px;
-    left: 6%;
-    width: 86%;
     height: 90px;
     border-top: solid 1px #f3f3f3;
     display: flex;
-    justify-content:flex-end;
-    padding-top: 20px;
+    justify-self:flex-start!important;;
 }
+
 #form_controls .active#next_button{
     background: #42BF8D;
     border-style: none;
