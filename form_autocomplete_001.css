@@ -455,6 +455,26 @@ body{
     0%{top:445px;opacity:0}
     100%{top:270px;left:245px;opacity:1}
 }
+/*###################MEDIA###################*/
+@media (min-width: 100px) and (max-width: 400px){
+    .form_panel{
+        background-size: 60%;
+        background-position-y: 47%;
+    }
+}
+@media (min-height: 200px) and (max-height: 400px){
+    .form_panel{
+        background-size: 40%;
+        background-position-y: 47%;
+    }
+}
+}
+@media (min-width: 560px){
+    .form_panel{
+        background-size: 30%;
+        background-position-y: 45%;
+    }
+}
 /*###################FONTS###################*/
 @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
 @import url(http://allfont.net/allfont.css?fonts=montserrat-light);
