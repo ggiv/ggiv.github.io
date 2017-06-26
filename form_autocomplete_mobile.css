@@ -1,0 +1,489 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background: #eee;
+     overflow: hidden;
+}
+
+.city_container{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    left: 0;
+    display: flex;
+    padding: 0px;
+    //justify-content: space-around;
+    //justify-items: center;
+    //padding-left: 5px;
+}
+.input_input{
+    width: 310px;
+    height: 62px;
+    padding-left: 16px;
+    font-size: 16px;
+    color:#3E3F3E;
+    border:none;
+    border-radius: 5px 0px 0px 5px;
+}
+.input_input:focus{
+    outline:none;
+}
+.input_button{
+    height: 64px;
+    width: 64px;
+    background: #42BF8D;
+    background-image: url('arrow.png');
+    cursor: pointer;
+    border-radius: 0px 5px 5px 0px;
+
+}
+#input_city_container{
+    //opacity: 0.1;
+    position: relative;
+    //transform: translate(92px,294px);
+    display: flex;
+}
+.autocomplete-suggestions{
+    position:relative;
+    transform: translate(-8px,-10px);
+    width: 399wpx !important;
+    background: white;
+    border-radius: 0px 0px 5px 5px;
+}
+.autocomplete-suggestion{
+    color:#3E3F3E;
+    padding: 16px;
+    font-size: 16px;
+    font-family: sans-serif;
+    box-shadow: 0px 0px 0.5px #aEaFaE;
+}
+.autocomplete-suggestion b{
+    color: #42BF8D;
+}
+.autocomplete-suggestion:hover{
+    background: #eee;
+    cursor: pointer;
+}
+/*##############FORM BODY##################*/
+#form_001{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 0!important;
+}
+
+.form_body_shadow{
+    position: absolute;
+    top:0px;
+    left:0px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    display: none;
+    padding: 0!important;
+}
+.form_body{
+    width: 100%!important;;
+    height: 100%!important;
+    background: white;
+    display: flex;
+    flex-direction: column;
+}
+.form_panel{
+    width: 100%;
+    height: 70%;
+    padding-top: 20px;
+    background:white;
+    top:30%;
+    left: 0!important;
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: 50% 43%;
+    font-family:"Montserrat";
+    color: #484848;
+    position: fixed;
+    box-shadow: 0px -50vh rgba(0,0,0,0.6);   
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    justify-items: center;
+}
+.form_panel img{
+    width: 60%;
+    align-self: center;
+}
+.form_panel p{
+    width: 100%;
+    height: 20px;
+    margin-left: 0px!important;
+    left: 0!important;
+    text-align: center;
+    padding: 0px 10px 0 10px;
+    font-size: 1px;
+    font-weight: 300;
+}
+.form_panel p:nth-child(1){
+    font-size:20px;
+    margin-top:3%;
+}
+.form_panel p:nth-child(2){
+    font-size:16px;
+    margin-top: 0%;
+}
+.form_panel p:nth-child(3){
+    font-size:16px;
+    margin-top: 37%;
+}
+.form_panel p:nth-child(4){
+    font-size:16px;
+    margin-top: 10%;
+}
+#panel_button{
+    border:1px solid #5A5A5A;
+    color:#5A5A5A;
+    height:50px;
+    width: 150px;
+    margin-bottom: 10px;
+    background: white;
+    font-family: "Montserrat", Helvetica, Arial;
+    font-size: 15px;
+    cursor: pointer;
+    justify-self: center;
+    align-self: center;
+    
+}
+
+#form_controls{
+    position: absolute!important;
+    left: 0!important;
+    width: 100%!important;
+    height: 50px!important;
+    padding: 0!important;
+    bottom: 0!important;
+}
+#form_controls button{
+    width: 100px!important;
+    left: 0;
+    width: 100%!important;
+}
+
+#form_controls button:nth-child(2){
+    //left: 50%;
+}
+
+#form_controls #back_button{
+    display:none;
+}
+
+#form_controls #next_button{
+    //width: 100%;
+    //left: 0;
+}
+
+.form_radio_box{
+    list-style: none;
+    padding: 0px;
+    height: 200px;
+}
+.form_radio_box li{
+    margin-bottom:0px;
+    margin-left: 20px;
+    width: 100%;
+    padding: 15px 10px 13px 20px;
+    //background-image: url('radio_on_2.png');
+    background-position: 18px 13px;
+    background-size: 25px;
+    background-repeat:no-repeat;
+}
+.form_radio_box label{
+    position: relative;
+    top:-3px;
+    margin-left: 20px;
+    font-size: 15px;
+    font-family: "Montserrat", Helvetica, Arial;
+    color: #58595B;
+    padding-right: 30px;
+    margin: 10px;
+}
+.form_radio{
+    width: 20px;
+    height: 20px;
+    margin:0px;
+    padding: 0px;
+    cursor: pointer;
+    opacity: 0;
+}
+.span_radio{
+    width: 20px;
+    height: 20px;
+    background-size: 100%;
+    cursor: pointer;
+}
+
+.form_text{
+    font-family: "Montserrat", Helvetica, Arial;
+    font-size:18px;
+    color: #434443;
+    padding-left: 39px;
+    margin-top:10px;
+}
+.form_text:nth-child(1){
+}
+#EmailField .form_text:nth-child(1){
+    padding-left:50px;   
+    margin-top:-10px;
+    margin-bottom: 30px;
+}
+#ContactFields .form_text:nth-child(1){
+        margin-top:-10px;
+        margin-bottom: 30px;
+}
+.form_body input{
+    font-size:14px !important;
+    font-family: "Montserrat", Helvetica, Arial;
+    font-weight: 300;
+}
+#form_progress{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    position: relative;
+    top:-7px;
+    width: 100%;
+    height: 10px;
+    border:0px;
+    margin:0px;
+    background: #e6e6e6;
+}
+#form_progress::-moz-progress-bar{
+    background: #42BF8D;
+}
+#form_progress::-webkit-progress-bar{
+    background-color: #f3f3f3;
+}
+#form_progress::-webkit-progress-value{
+    background:#42BF8D;;
+}
+
+#form_controls{
+    position: relative;
+    margin-top:0px;
+    height: 90px;
+    border-top: solid 1px #f3f3f3;
+    display: flex;
+    justify-self:flex-start!important;;
+}
+
+#form_controls .active#next_button{
+    background: #42BF8D;
+    border-style: none;
+    color:white;
+    font-family: "Montserrat", Helvetica, Arial;
+    font-size: 15px;
+    cursor: pointer;
+}
+#form_controls .not_active#next_button{
+    background: #eee;
+    border-style: none;
+    color:#aaa;
+    font-family: "Montserrat", Helvetica, Arial;
+    font-size: 15px;
+    cursor: not-allowed;
+}
+#form_controls .active#back_button{
+    background: white;
+    border-style: none;
+    color:#434443;
+    font-family: "Montserrat", Helvetica, Arial;
+    font-size: 15px;
+    cursor: pointer;
+}
+#form_controls .not_active#back_button{
+    background: white;
+    border-style: none;
+    color:#434443;
+    font-family: "Montserrat", Helvetica, Arial;
+    font-size: 15px;
+    cursor: pointer;
+    //visibility: hidden;
+}
+#HowManyList{
+    display: none;
+}
+#heightList{
+    display: none;
+}
+#JobDescription{
+    display: none;
+    width: 90%;
+}
+#JobDescription .list_radio{
+    background: white !important;
+}
+#ContactFields{
+    display: none;
+}
+#EmailField{
+    display: none;
+}
+.desctiption_textbox{
+    width: 82%!important;
+    min-height: 80px; 
+    font-size: 14px;
+    font-family: "Montserrat", Helvetica, Arial;
+    font-weight: 300;
+    padding: 10px;
+    border: solid 1px #5A5A5A5A;
+}
+.desctiption_textbox:focus{
+    border: solid 1px #5A5A5A5A;
+}
+#nothing_else_to_add{
+    background-image: none!important;
+    padding-left: 25px!important;
+    margin-top:-17px!important;
+    font-family: "Montserrat", Helvetica, Arial;
+    font-weight: 300;
+    font-size: 12px;
+    //color:#A7B8CF;
+    color:#04BAF9;
+    cursor: pointer;
+
+}
+.stage_5  .form_text.small_form_text{
+    font-size: 15px;
+    text-align: center;
+    width: 85%;
+    color:#B6B6B8;
+    transform: translate(0px,10px);
+}
+.stage_5 .no_radio{
+    background: white!important;
+}
+.stage_5 .no_form_text{
+    margin-left: 0px;
+    margin-bottom: 10px;
+    padding: 0px;
+    font-size: 15px;
+}
+.stage_5 .form_input{
+    height: 30px;
+    width: 60%;
+    margin-left: 50px;
+    margin-bottom: -0px;
+    font-size: 20px;
+    padding-left:10px;
+    border: solid 1px #5A5A5A5A;
+}
+.no_form_text{
+    margin-left: 50px!important;
+}
+
+#small_blue_text{
+    margin-left: 50px;
+    font-size: 12px;
+    color:#A7B8CF;
+    color:#04BAF9;
+    font-family: "Montserrat", Helvetica, Arial;
+    margin-bottom: 25px;
+    font-weight: 300;
+}
+.stage_5 li{
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    background-position-y: 10px;
+}
+.stage_5 label{
+    font-size: 12px;
+    position: relative;
+    top:-9px;
+    color:#B6B6B8;
+}
+#EmailField .form_text{
+    text-align: left;
+    
+}
+
+.tabbed_radio{
+    position: relative;
+    transform: translate(15px,0px);
+}
+.unactive{
+    visibility: hidden;
+}
+.error_message_arrow{
+    width: 15px;
+    height: 15px;
+    position: relative;
+    top:-1px;
+    left:10px;
+    background: #C74450;
+    transform: rotate(45deg);
+}
+.error_message{
+    position: absolute;
+    left:270px;
+    top:245px;
+    width: 200px;
+    height: 20px;
+    background: #C74450;
+    display: flex;
+    padding: 0px;
+    border-radius:5px;
+    border: solid 1px white;
+    display: none;
+}
+.error_message.animate_me{
+    display: flex;
+    animation: anim_1 0.3s linear;  
+}
+.error_message.animate_me_phone{
+    display: flex;
+    animation: anim_2 0.3s linear;  
+}
+.error_message p{
+    position: relative;
+    padding: 0px;
+    left: -10px;
+    margin-top: 4px;
+    margin-right: 0px;
+    padding: 0px;
+    font-size: 9px;
+    color:white;
+    font-family: "Montserrat", Helvetica, Arial;
+}
+@keyframes anim_1{
+    0%{top:250px;opacity:0}
+    100%{top:225px;opacity:1}
+}
+@keyframes anim_2{
+    0%{top:445px;opacity:0}
+    100%{top:270px;left:245px;opacity:1}
+}
+/*###################MEDIA###################*/
+@media (min-width: 100px) and (max-width: 400px){
+    .form_panel{
+        background-size: 60%;
+        background-position-y: 47%;
+    }
+}
+@media (min-height: 200px) and (max-height: 400px){
+    .form_panel{
+        background-size: 40%;
+        background-position-y: 47%;
+    }
+}
+}
+@media (min-width: 560px){
+    .form_panel{
+        background-size: 30%;
+        background-position-y: 45%;
+    }
+}
+/*###################FONTS###################*/
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import url(http://allfont.net/allfont.css?fonts=montserrat-light);
