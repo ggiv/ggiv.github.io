@@ -85,6 +85,9 @@ body{
     align-items: center;
     display: none;
     padding: 0!important;
+    left: 0!important;
+    bottom:0!important;
+    right: 0!important;
 }
 .form_body{
     width: 100%!important;;
@@ -92,6 +95,9 @@ body{
     background: white;
     display: flex;
     flex-direction: column;
+    left: 0!important;
+    bottom:0!important;
+    right: 0!important;
 }
 .form_panel{
     width: 100%;
@@ -100,6 +106,8 @@ body{
     background:white;
     top:30%;
     left: 0!important;
+    bottom:0!important;
+    right: 0!important;
     background-size: 70%;
     background-repeat: no-repeat;
     background-position: 50% 43%;
