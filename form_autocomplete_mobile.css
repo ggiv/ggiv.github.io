@@ -192,6 +192,14 @@ body{
     //left: 0;
 }
 
+.form_input:focus{
+    font-size: 1.3em!important;
+    height: 22%!important;
+    width: 80%!important
+}
+.form_input{
+    transition: all 0.2s ease-in;
+}
 .form_radio_box{
     list-style: none;
     padding: 0px;
@@ -332,6 +340,14 @@ body{
 #JobDescription .list_radio{
     background: white !important;
 }
+.desctiption_textbox:focus{
+    font-size: 1.3em;
+    width: 100%!important;
+    height: 120px !important;  
+}
+.desctiption_textbox{
+    transition: all 0.2s ease-in;
+}
 #ContactFields{
     display: none;
 }
@@ -368,6 +384,8 @@ body{
     width: 85%;
     color:#B6B6B8;
     transform: translate(0px,10px);
+    margin-left: 0px;
+    padding-left: 30px !important;;
 }
 .stage_5 .no_radio{
     background: white!important;
@@ -381,18 +399,18 @@ body{
 .stage_5 .form_input{
     height: 30px;
     width: 60%;
-    margin-left: 50px;
+    margin-left: 30px;
     margin-bottom: -0px;
     font-size: 20px;
     padding-left:10px;
     border: solid 1px #5A5A5A5A;
 }
 .no_form_text{
-    margin-left: 50px!important;
+    margin-left: 30px!important;
 }
 
 #small_blue_text{
-    margin-left: 50px;
+    margin-left: 30px;
     font-size: 12px;
     color:#A7B8CF;
     color:#04BAF9;

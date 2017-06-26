@@ -48,10 +48,8 @@
 		var email=document.getElementById('email_field_01');
 		var panel_button=document.getElementById('panel_button');
 		var panel=document.getElementById('form_panel');
-		var contact_checkbox=document.getElementById('contact_type_checkbox');
 
 		var SUBMIT_FORM=false;
-		var contact_checked=true;
 		
 
 		
@@ -60,7 +58,6 @@
 		city_input_button.addEventListener('click',citySelected);
 		next_button.addEventListener('click',nextStep2);
 		back_button.addEventListener('click',backStep);
-		contact_checkbox.addEventListener('click',contactCheckboxClick);
 		document.getElementById("nothing_else_to_add").addEventListener('click',nothingToAdd);
 		console.log(panel_button.addEventListener('click',panelButtonClicked));
 		
@@ -115,11 +112,12 @@
 			//radio_buttons[i].style["background-image"]="url(radio_off_2.png)";
 			//radio_buttons[i].style["background-color"]="#FFFFFF";
 		}
-		if(this.id!='contact_list_item'){
-			for(var i=1;i<this.parentElement.childNodes.length;i+=2){
-				if(this.parentElement.childNodes[i].tagName=="LI"){
-				this.parentElement.childNodes[i].style["background-image"]="url(radio_off_2.png)";
-				this.parentElement.childNodes[i].style["background-color"]="#FFFFFF";
+			for(var i=1;i<this.parentElement.childNodes.length;i+=2)
+			{
+				if(this.parentElement.childNodes[i].tagName=="LI")
+				{
+					this.parentElement.childNodes[i].style["background-image"]="url(radio_off_2.png)";
+					this.parentElement.childNodes[i].style["background-color"]="#FFFFFF";
 				}
 			}
 			
@@ -129,7 +127,6 @@
 				next_button.className="active"
 				back_button.className="active"
 				error_message.classList.remove("animate_me");
-			}else{console.log("no")};
 		}
 		function citySelected(){
 			if(city_input.value!=""){
@@ -183,7 +180,8 @@
 				form_progress.value+=20;
 				formStage++;
 				error_text.innerHTML="Please add best contact number."
-				error_message.style.visibility="visible";
+				//error_message.style.visibility="visible";
+				email_field.style.border='solid 1px red';
 
 			}else if(formStage==6&&formIsOk()&&next_button.className=='active'){
 				//contact_fields.style.display='block';
@@ -194,10 +192,10 @@
 				SUBMIT_FORM=true;
 			}else{
 				if(formStage!=5){
-					error_message.classList.add("animate_me");
+					//error_message.classList.add("animate_me");
 				}else{
 					error_message.classList.remove("animate_me");
-					error_message.classList.add("animate_me_phone");
+					//error_message.classList.add("animate_me_phone");
 					error_message.style.top="420px";
 				}
 			}
@@ -300,17 +298,15 @@
 					next_button.classList.remove("not_active");
 					next_button.classList.add("active");
 					return true;
+				}else{
+						email.style.border='solid 1px #ff0000';
 				}
 			}else if(formStage==6){
 				var client_contact=document.getElementsByClassName("form_input");
 				var elements=document.getElementsByName("Call_or_email");
 					if(client_contact[0].value!=""&&client_contact[1].value!=""){
-						for(var i=0;i<elements.length;i++){
-							if(elements[i].checked){
 								console.log('sending emails!!!')
 								return true;
-							}
-						}
 					}
 
 			}else{
