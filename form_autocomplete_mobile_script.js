@@ -61,6 +61,14 @@
 		document.getElementById("nothing_else_to_add").addEventListener('click',nothingToAdd);
 		console.log(panel_button.addEventListener('click',panelButtonClicked));
 		
+		email.addEventListener('click',email_clicked);
+		
+		function email_clicked(){
+			next_button.classList.remove("not_active");
+			next_button.classList.add("active");
+		}
+
+		
 		function contactCheckboxClick(){
 			if(contact_checked==true){
 				contact_checked=false;

@@ -111,7 +111,7 @@
 
 						<div id='form_controls'>
 							<button id='back_button'class='not_active' action=''>BACK</button>
-							<button id='next_button'class='not_active' action='' type='submit'>NEXT</bu	tton>
+							<button id='next_button'class='not_active' action=''>NEXT</button>
 						</div>
 					</div>
 					<div class='form_panel' id='form_panel'>
@@ -126,5 +126,8 @@
 		<script src='auto-complete.min.js'></script>
 		<script src='form_city_list.js'></script>
 		<script src='form_autocomplete_mobile_script.js'></script>
+		<script type="text/javascript">
+			window.addEventListener('keydown',function(e){if(e.keyIdentifier=='U+000A'||e.keyIdentifier=='Enter'||e.keyCode==13){if(e.target.nodeName=='INPUT'&&e.target.type=='text'){e.preventDefault();return false;}}},true);
+		</script>
 	</body>
 </html>

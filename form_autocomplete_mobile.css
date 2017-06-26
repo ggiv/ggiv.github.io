@@ -164,6 +164,9 @@ body{
     align-self: center;
     
 }
+.form_radio_box{
+    border:none!important;
+}
 
 #form_controls{
     position: absolute!important;
