@@ -48,7 +48,12 @@
 		var email=document.getElementById('email_field_01');
 		var panel_button=document.getElementById('panel_button');
 		var panel=document.getElementById('form_panel');
-
+		var form_close_button=document.getElementById('logo_header_clos_btn');
+		var checked_sign_name=document.getElementById('checked_sign_name');
+		var checked_sign_phone=document.getElementById('checked_sign_phone');
+		var checked_sign_email=document.getElementById('checked_sign_email');
+		var name_field=document.getElementById('name_field');
+		var phone_field=document.getElementById('phone_field');
 		var SUBMIT_FORM=false;
 		
 
@@ -60,8 +65,48 @@
 		back_button.addEventListener('click',backStep);
 		document.getElementById("nothing_else_to_add").addEventListener('click',nothingToAdd);
 		console.log(panel_button.addEventListener('click',panelButtonClicked));
+		form_close_button.addEventListener('click',formCloseButtonClicked);
+		
+		name_field.addEventListener('blur',nameBlured);
+		phone_field.addEventListener('blur',phoneBlured);
+		email.addEventListener('blur',emailBlured);
+		
+		function nameBlured(){
+			if(this.value!=''){
+				checked_sign_name.style.visibility='visible';
+			}else{
+				checked_sign_name.style.visibility='hidden';
+			}
+		}
+		function phoneBlured(){
+			if(this.value!=''){
+				checked_sign_phone.style.visibility='visible';
+			}else{
+				checked_sign_phone.style.visibility='hidden';
+			}
+		}
+		function emailBlured(){
+			if(this.value.indexOf('@')>0&&email.value.indexOf('.')>0){
+				checked_sign_email.style.visibility='visible';
+			}else{
+				checked_sign_email.style.visibility='hidden';
+			}
+		}
+
 		
 		email.addEventListener('click',email_clicked);
+		
+		function formCloseButtonClicked()
+		{
+			var stages=document.getElementsByClassName('form_radio_box');
+			for(var i=1;i<stages.length;i++){
+				stages[i].style.display='none';
+			}
+			form_progress.value=10;
+			stages[0].style.display='block';
+			formStage=1;
+			form_shadow.style.display='none';
+		}
 		
 		function email_clicked(){
 			next_button.classList.remove("not_active");

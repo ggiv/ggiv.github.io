@@ -5,9 +5,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 		<link rel='stylesheet' href='form_autocomplete_mobile.css'/>
-	 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> 
-	  <link href="https://fonts.googleapis.com/css?family=Montserrat:300" rel="stylesheet"> 
-	 <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" /> 
+		<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> 
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:300" rel="stylesheet"> 
+		<link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet" /> 
 	</head>
 	<body>
 		<div class='city_container'>
@@ -18,6 +18,9 @@
 				</div>
 				<div class='form_body_shadow'>
 					<div class='form_body'>
+						<div class='logo_header'>
+							<p><span>Go</span><span>Tree</span><sapan>Quotes</sapan></p><p id='logo_header_clos_btn'><span>&times;</span></p>
+						</div>
 						<progress id='form_progress' max='100' value='10'></progress>
 						<!-- ######################### JOB TYPE ###################-->
 						<div class="error_message" id="error_message_1">
@@ -94,9 +97,9 @@
 						<ul class='form_radio_box stage_5' id='ContactFields'>
 							<p class='form_text small_form_text'>Only the 3 businesses quoting your job can see your details </p>
 								<p class='form_text no_form_text'>First name</p>
-								<input class='form_input' name='First_name'/>
+								<input class='form_input' name='First_name' id='name_field'/><img src='checked_sign.png' class='checked_sign' id='checked_sign_name'></img>
 								<p class='form_text no_form_text'>Best contact number</p>
-								<input class='form_input' name='Best_contact_number'/>
+								<input class='form_input' name='Best_contact_number' id='phone_field'/><img src='checked_sign.png' class='checked_sign' id='checked_sign_phone'></img>
 								<p id='small_blue_text'>Your phone number is used to give you free quotes</p>
 							</li>
 						</ul>
@@ -104,7 +107,7 @@
 						<ul class='form_radio_box stage_5' id='EmailField'>
 							<p class='form_text small_form_text'>Email will be used by companies to send your quote after viewing the job</p>
 								<p class='form_text no_form_text'>Which email should we send your quotes to?</p>
-								<input class='form_input' id='email_field_01'name='E_mail' placeholder='e.g. example@gmail.com' />
+								<input class='form_input' id='email_field_01'name='E_mail' placeholder='e.g. example@gmail.com' /><img src='checked_sign.png' class='checked_sign' id='checked_sign_email'></img>
 							</li>
 						</ul>										
 						<!-- ######################### End ###################-->

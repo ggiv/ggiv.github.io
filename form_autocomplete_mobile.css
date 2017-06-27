@@ -195,9 +195,13 @@ body{
     //left: 0;
 }
 
+.form_body .form_input{
+    font-size: 1.4em!important;
+}
+
 .form_input:focus{
-    font-size: 1.3em!important;
-    height: 22%!important;
+    font-size: 1.8em!important;
+    height: 70px!important;
     width: 80%!important
 }
 .form_input{
@@ -276,6 +280,7 @@ body{
     height: 10px;
     border:0px;
     margin:0px;
+    margin-bottom: -10px;
     background: #e6e6e6;
 }
 #form_progress::-moz-progress-bar{
@@ -344,13 +349,11 @@ body{
     background: white !important;
 }
 .desctiption_textbox:focus{
-    font-size: 1.3em;
+    font-size: 1.5em;
     width: 100%!important;
-    height: 120px !important;  
+    height: 150px !important;  
 }
-.desctiption_textbox{
-    transition: all 0.2s ease-in;
-}
+
 #ContactFields{
     display: none;
 }
@@ -359,12 +362,13 @@ body{
 }
 .desctiption_textbox{
     width: 82%!important;
-    min-height: 80px; 
-    font-size: 14px;
+    min-height: 100px; 
+    font-size: 1.2em;
     font-family: "Montserrat", Helvetica, Arial;
     font-weight: 300;
     padding: 10px;
     border: solid 1px #5A5A5A5A;
+    transition: all 0.2s ease-in;
 }
 .desctiption_textbox:focus{
     border: solid 1px #5A5A5A5A;
@@ -400,11 +404,11 @@ body{
     font-size: 15px;
 }
 .stage_5 .form_input{
-    height: 30px;
-    width: 60%;
+    height: 50px;
+    width: 80%;
     margin-left: 30px;
     margin-bottom: -0px;
-    font-size: 20px;
+    font-size: 1.8em;
     padding-left:10px;
     border: solid 1px #5A5A5A5A;
 }
@@ -484,6 +488,37 @@ body{
     font-size: 9px;
     color:white;
     font-family: "Montserrat", Helvetica, Arial;
+}
+.logo_header{
+    margin:0;
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-end;
+
+}
+.logo_header p{
+    font-family: "Lato"; 
+    font-size: 1.3em;
+    font-weight: 300;
+    margin:-5px 10px 20px 20px;
+}
+.logo_header p:nth-of-type(2){
+    font-size: 2.3em;
+    color: #E6E6E6;
+    position: relative;
+    top:8px;
+    cursor: pointer;
+}
+.logo_header p span:nth-of-type(2){
+    font-weight: bold;
+}
+
+.checked_sign{
+    position: relative;
+    transform: translate(-40px,10px);
+    visibility: hidden;
 }
 @keyframes anim_1{
     0%{top:250px;opacity:0}
